@@ -1,8 +1,8 @@
 # Account login
 
-基礎的登入功能練習，透過 Node.js、Express、Express-handlebars、body-parser 建置
+基礎的登入功能測試
 
-![示意圖](https://github.com/William0832/account_login/blob/master/img/Account_Login.gif)
+![screenshot ](https://github.com/mk900/basic-account-login/blob/master/screenshot.GIF)
 
 ## 功能表
 
@@ -21,30 +21,21 @@
 |   4 |   natasha@gamil.com |     \*parol#@\$! |
 |   5 |     nick@shield.com |         password |
 
-## 安裝操作
+## Requirement
+[Node.js]
 
-1. **下載專案**
+## Packages
+[express]
+[express-handlebars]
+[body-parser]
 
-```
-git clone https://github.com/William0832/account_login.git
-```
+## Installing
+透過 `git clone` 指令將專案下載下來到本機端
 
-2. **由 (Terminal)，進入 restaurant_list 資料夾**
+開啟終端機 (Terminal)，進入資料夾內
 
-```
-cd account_login
-```
+執行 `npm install`，將專案所需套件下載下來
 
-3. **安裝專案需求套件**
+套件安裝完畢後，用專案所設定的統一指令 `npm run dev`，即可執行專案
 
-```
-npm install
-```
-
-4. **執行專案**
-
-```
-npm run dev
-```
-
-5. **檢視 Terminal 訊息：Express server is listen on [localhost:3000](http://localhost:3000)**
+預設 port 為 3000，請直接打開瀏覽器，並在 URL 輸入 http://localhost:3000/ 即可瀏覽網頁
