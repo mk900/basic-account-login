@@ -5,7 +5,7 @@
 
   <input name="email" type="email" placeholder="Email" class="rounded my-3 p-2" value={{email}}>
 
-  <input name="password" type="password" placeholder="Password" class="rounded my-3 p-2">
+  <input name="password" type="password" placeholder="Password" class="rounded my-3 p-2" required>
 
   <div>
     <input name="storeEmail" type="checkbox" {{#if storeEmail}}checked{{/if}}>
@@ -18,6 +18,6 @@
     {{/if}}
   </div>
 
-  <button type="submit" class="rounded my-4 p-2 px-4">Sign in</button>
+  <button type="submit" class="btn btn-outline-dark my-4 p-2 px-4 sing-in">Sign in</button>
 
 </form>

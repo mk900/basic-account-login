@@ -1,9 +1,10 @@
 // include packages
 const express = require('express')
-const app = express()
+const session = require('express-session')
 const exphbs = require('express-handlebars')
 const bodyParser = require('body-parser')
 const checkUser = require('./checkUsers')
+const app = express()
 const port = 3000
 
 // set template engine
@@ -13,9 +14,32 @@ app.set('view engine', 'handlebars')
 // use body-parser
 app.use(bodyParser.urlencoded({ extended: true }))
 
-// set routes
+// use session middleware
+app.use(
+  session({
+    name: 'appLogin',
+    secret: 'secret',
+    resave: true,
+    saveUninitialized: false,
+    cookie: { maxAge: 30 * 1000 } // session只保留30秒
+  })
+)
+
+// set static files
+app.use(express.static('public'))
+
+// set routes & check session
 app.get('/', (req, res) => {
-  res.render('index')
+  // render welcome page if session alive
+  // console.log(req.session)
+  if (req.session.verifiedAccount) {
+    res.render('welcome_page', {
+      firstName: req.session.verifiedAccount.firstName
+    })
+  } else {
+    // render login page if no session 
+    res.render('index')
+  }
 })
 
 // handle the req & res
@@ -34,11 +58,14 @@ app.post('/', (req, res) => {
   // show welcome page if login Success
   if (loginStatus === 'Success') {
     // console.log('verifiedAccount:', verifiedAccount);
+    // store session
+    req.session.verifiedAccount = verifiedAccount
     res.render('welcome_page', {
       firstName: verifiedAccount.firstName
     })
   } else if (logout === 'on') {
-    // logout
+    // logout & destroy session
+    req.session.destroy()
     res.render('index')
   } else {
     // show error message if login Fail 

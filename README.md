@@ -1,8 +1,8 @@
 # Account login
 
-基礎的登入功能測試
+基礎的登入功能採 Cookie-based Authentication 登入方式實作
 
-![screenshot ](https://github.com/mk900/basic-account-login/blob/master/screenshot.GIF)
+![screenshot ](https://github.com/mk900/account-login-use-session/blob/master/screenshot.GIF)
 
 ## 功能表
 
@@ -22,12 +22,13 @@
 |   5 |     nick@shield.com |         password |
 
 ## Requirement
-[Node.js]
+- [Node.js]
 
 ## Packages
-[express]
-[express-handlebars]
-[body-parser]
+- [express]
+- [express-handlebars]
+- [body-parser]
+- [express-session]
 
 ## Installing
 透過 `git clone` 指令將專案下載下來到本機端
