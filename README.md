@@ -2,7 +2,7 @@
 
 基礎的登入功能採 Cookie-based Authentication 登入方式實作
 
-![screenshot ](https://github.com/mk900/account-login-use-session/blob/master/screenshot.GIF)
+![screenshot ](https://github.com/mk900/basic-account-login/blob/adv/screenshot.GIF)
 
 ## 功能表
 
